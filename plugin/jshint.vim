@@ -22,6 +22,8 @@ function! s:JSHint(cmd, args)
         let &grepformat=grepformat1
     endtry
 
+    redraw!
+
 endfunction
 
 command! -bang -nargs=* -complete=file JSHint call s:JSHint('grep<bang>',<q-args>)
