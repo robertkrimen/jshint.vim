@@ -16,7 +16,7 @@ function! s:JSHint(cmd, args)
     try
         let &grepprg=g:jshintprg
         let &grepformat="%f: line %l\\,\ col %c\\, %m,%-G,%-G%s error,%-G%s errors,%-GLint Free!"
-        silent execute a:cmd . " " . l:fileargs
+        silent execute a:cmd . " \"" . l:fileargs . "\""
     finally
         let &grepprg=grepprg1
         let &grepformat=grepformat1
